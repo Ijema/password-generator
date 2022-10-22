@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    </head>
+    <body>
+        <div class="container">
+            <h1>Generate a</h1>
+            <h2>random password</h2>
+            <P>never use an insecure password again.</p>
+            <label class="password-label">Enter sample word:</label>
+            <input type="text" id="text-input1[]" class="password-input text-input1" /><br />
+            <label class="password-label">Enter password length:</label>
+            <input type="text" id ="text-input2" class="password-input"/>
+            <button type="button" id="generatePass" onclick="getPassword()">
+                Generate password</button>
+            <div class="copy-password">
+                <input type="text" class="display-unit" id="display-unit1" readonly /> <span class="material-icons copy-link-input1">content_copy</span> 
+                <input type="text" class="display-unit" id="display-unit2" readonly /> <span class="material-icons copy-link-input2">content_copy</span> 
+            </div>
+            
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
