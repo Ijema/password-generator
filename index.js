@@ -24,7 +24,6 @@ function getPassword(){
          displayUnit2.value = y
    
      }
-    console.log(lengthInput)
 }
 document.querySelectorAll(".copy-password").forEach(copyLinkContainer => {
     const inputField1 = copyLinkContainer.querySelector("#display-unit1")
@@ -35,11 +34,9 @@ document.querySelectorAll(".copy-password").forEach(copyLinkContainer => {
     // selects everything when you click on the input box
     inputField1.addEventListener("focus", () => {
         inputField1.select()
-        console.log("Selected")
     })
     inputField2.addEventListener("focus", () => {
         inputField2.select()
-        console.log("Selected")
     })
 
     //enables the copy button to copy the text once it is clicked
