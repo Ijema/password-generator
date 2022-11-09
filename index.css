@@ -1,18 +1,21 @@
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #0202;
     overflow: hidden;
+    position: relative;
 }
 .container{
-    margin-top: 110px;
+    /* margin-top: 110px; */
+    /* align-content: center; */
     background-color: #28282B;
     width: 495px;
     height: 400px;
     padding-left: 30px;
     border-radius: 4px;
     font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 30%);
 }
 h1{
     padding-top: 20px;
@@ -35,7 +38,7 @@ p{
 }
 .password-input{
     background-color: gray;
-    width: 180px;
+    width: 203px;
     height: 25px;
     margin-left: 50px;
     margin-bottom: 10px;
@@ -52,12 +55,16 @@ button{
     background-color: green;
     color: black;
     font-size:18px;
-    padding: 4px 10px 4px 10px;
-    border-radius: 4px;
+    padding: 4px 13px 4px 13px;
+    border-radius: 3px;
     border: none;
-    margin: 10px 0px 40px 240px;
-    width: 187px;
+    margin: 10px 0px 40px 241px;
+    width: 209px;
+    font-weight: bold;
     cursor: pointer;
+}
+button:active{
+    transform: scale(0.98);
 }
 .display-unit {
     background-color: gray;
@@ -67,13 +74,15 @@ button{
     color: white;
     border-radius: 3px;
     font-size: 17px;
-    position: block;
     cursor: default;
     flex-shrink: 0;
     padding: 0 8px;
     display: inline;
-    align-items: center;
+    align-items: right;
     
+}
+.display-unit::placeholder{
+    color: rgb(54, 53, 53);
 }
 input:focus{
     outline: none;
@@ -83,17 +92,87 @@ input:focus{
      display: flex;
      max-width: 250px; 
      cursor: pointer;
+     justify-content: space-around;
+     align-items: right;
+     justify-items: right;
+     margin-left: 110px;
 }
 .material-icons {
-    background-color: white;
+    background-color: green;
     margin-top: 2px;
-    height: 24px;
-    margin-left: -3px;
-    padding: 2px 0px 1px 3px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-    margin-right: 38px;
+    height: 27px;
+    margin-left: -1px;
+    padding: 1px 0px 2px 3px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-right: 28px;
 }
 .material-icons:hover{
-    background-color: green;
+    background-color: white;
+}
+
+@media screen and (max-width:496px){
+    .container{
+        width: 300px;
+        height: auto;
+        padding-left: 0px;
+        margin-top: 10px;
+        padding-bottom: 30px;
+        transform: translate(-50%, 14%);
+    }
+    p, h1, h2{
+        text-align: center;
+    }
+    .password-input{
+        width: 203px;
+        height: 25px;
+        margin-left: 30px;
+        margin-top:5px;
+        margin-bottom: 10px;
+    }
+    .password-label{
+        margin-left: 30px;
+    }
+    .text-input1{
+        margin-left: 30px; 
+    }
+    button{
+        font-size:16px;
+        padding: 4px 10px 4px 10px;
+        margin: 5px 0px 15px 70px;
+        width: 190px;
+    }
+    .display-unit {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        font-size: 17px;
+        padding: 0 8px;
+        display: inline;
+        align-items: left;
+    }
+    .copy-password {
+         height: 36px;
+         display: inline;
+         max-width: 50px; 
+         align-items: left;
+         margin-left: 30px;
+    }
+    #display-unit2{
+        margin-left: 30px;
+    }
+    .material-icons {
+        margin-top: 2px;
+        height: 27px;
+        width: 48px;
+        margin-left: -1px;
+        padding: 1px 0px 2px 3px;
+        margin-right: 1px;
+        display: inline-block;
+    }
+    .material-icons:hover{
+        background-color: green;
+    }
 }

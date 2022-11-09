@@ -1,29 +1,38 @@
 function getPassword(){
     // Grab the word to be used to generate password and the length required
-    let textInput = document.getElementById("text-input1[]").value
-    let lengthInput = document.getElementById("text-input2").value
+    let textInput = document.getElementById("text-input-password[]").value
+    let lengthInput = document.getElementById("text-input-length").value
     // Display the generated password here
     let displayUnit1= document.getElementById("display-unit1")
     let displayUnit2 = document.getElementById("display-unit2")
     
     
-    //let arrayOfWords = [textInput]
+    // Generates random password
     let x = ""
-   for (let i = 0; i < lengthInput; i++) {
-      
-        let generatePass = Math.floor(Math.random()*textInput.length)
-        x += textInput[generatePass]
-        displayUnit1.value = x
+    let y = ""
+
+    function passwordGen(){
+        let generatePass1 = Math.floor(Math.random()*lengthInput+1)
+        let generatePass2 = Math.floor(Math.random()*lengthInput+1) 
         
+        x += textInput[generatePass1]
+        y += textInput[generatePass2]
+    }
+
+   for (let i = 0; i < lengthInput; i++) {
+        passwordGen()
+        
+        if (( x === y) || ( x < lengthInput) || (y < lengthInput)){
+            x = ""
+            y = ""
+            passwordGen()
+        }
+        else {
+            displayUnit1.value = x
+            displayUnit2.value = y
+        }
    }
-   let y = ""
-    for (let i = 0; i < lengthInput; i++) {
-      
-         let generatePass = Math.floor(Math.random()*textInput.length)
-         y += textInput[generatePass]
-         displayUnit2.value = y
-   
-     }
+   return false
 }
 document.querySelectorAll(".copy-password").forEach(copyLinkContainer => {
     const inputField1 = copyLinkContainer.querySelector("#display-unit1")
