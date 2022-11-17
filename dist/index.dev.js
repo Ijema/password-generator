@@ -12,23 +12,23 @@ function getPassword() {
   var y = "";
 
   function passwordGen() {
-    var generatePass1 = Math.floor(Math.random() * lengthInput + 1);
-    var generatePass2 = Math.floor(Math.random() * lengthInput + 1);
+    var generatePass1 = Math.floor(Math.random() * textInput.length);
+    var generatePass2 = Math.floor(Math.random() * textInput.length);
     x += textInput[generatePass1];
     y += textInput[generatePass2];
   }
 
   for (var i = 0; i < lengthInput; i++) {
-    passwordGen();
+    passwordGen(); // if (( x === y) || ( x.length < lengthInput) || (y.length < lengthInput)){
+    //     x = ""
+    //     y = ""
+    //     passwordGen()
+    // }
+    // else {
+    // passwordGen()
 
-    if (x === y || x < lengthInput || y < lengthInput) {
-      x = "";
-      y = "";
-      passwordGen();
-    } else {
-      displayUnit1.value = x;
-      displayUnit2.value = y;
-    }
+    displayUnit1.value = x;
+    displayUnit2.value = y; // }
   }
 
   return false;

@@ -12,8 +12,8 @@ function getPassword(){
     let y = ""
 
     function passwordGen(){
-        let generatePass1 = Math.floor(Math.random()*lengthInput+1)
-        let generatePass2 = Math.floor(Math.random()*lengthInput+1) 
+        let generatePass1 = Math.floor(Math.random()*textInput.length)
+        let generatePass2 = Math.floor(Math.random()*textInput.length)
         
         x += textInput[generatePass1]
         y += textInput[generatePass2]
@@ -22,15 +22,16 @@ function getPassword(){
    for (let i = 0; i < lengthInput; i++) {
         passwordGen()
         
-        if (( x === y) || ( x < lengthInput) || (y < lengthInput)){
-            x = ""
-            y = ""
-            passwordGen()
-        }
-        else {
+        // if (( x === y) || ( x.length < lengthInput) || (y.length < lengthInput)){
+        //     x = ""
+        //     y = ""
+        //     passwordGen()
+        // }
+        // else {
+            // passwordGen()
             displayUnit1.value = x
             displayUnit2.value = y
-        }
+        // }
    }
    return false
 }
